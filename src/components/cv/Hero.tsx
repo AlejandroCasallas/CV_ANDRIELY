@@ -75,7 +75,7 @@ const Hero = () => {
             <span className="ml-4 text-foreground">
               education:{" "}
               <span className="text-primary">
-                "Estudiante de Ingeniería de Software (7mo semestre) y Tecnólogo en ADSO"
+                "Tecnólogo en ADSO"
               </span>
               ,
             </span>
