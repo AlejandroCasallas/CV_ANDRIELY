@@ -100,7 +100,7 @@ const Hero = () => {
           className="flex items-center gap-4"
         >
           <a
-            href="https://wa.me/573112284689"
+            href="https://wa.me/573112284689?text=Hola%20Andriely,%20vi%20tu%20perfil%20y%20me%20gustaría%20agendar%20una%20reunión%20contigo."
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -109,7 +109,7 @@ const Hero = () => {
             <MessageCircle size={22} />
           </a>
           <a
-            href="https://www.linkedin.com/in/andriely-casallas"
+            href="https://www.linkedin.com/in/alejandrocasallas"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -118,7 +118,7 @@ const Hero = () => {
             <Linkedin size={22} />
           </a>
           <a
-            href="https://github.com/andrielycasallas"
+            href="https://github.com/alejandrocasallas"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"

@@ -35,7 +35,7 @@ const Contact = () => {
           className="mb-10"
         >
           <a
-            href="https://wa.me/573112284689"
+            href="https://wa.me/573112284689?text=Hola%20Andriely,%20vi%20tu%20perfil%20y%20me%20gustaría%20agendar%20una%20reunión%20contigo."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-bold text-lg transition-all duration-300 hover:glow-primary hover:scale-105"
@@ -54,7 +54,7 @@ const Contact = () => {
           className="flex items-center justify-center gap-6"
         >
           <a
-            href="https://www.linkedin.com/alejandrocasallas"
+            href="https://www.linkedin.com/in/alejandrocasallas"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
