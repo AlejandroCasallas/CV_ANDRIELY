@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System - Dark Terminal Aesthetic
+   Inspired by developer portfolios with a modern, minimalist approach.
+   All colors are HSL.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 187 92% 50%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 160 84% 39%;
+
+    /* Custom tokens */
+    --glow-primary: 160 84% 39%;
+    --glow-accent: 187 92% 50%;
+    --code-bg: 220 20% 8%;
+    --terminal-green: 160 84% 39%;
+    --terminal-cyan: 187 92% 50%;
+    --terminal-yellow: 45 93% 58%;
+    --terminal-purple: 280 85% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3),
+                0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.3),
+                0 0 40px hsl(var(--glow-accent) / 0.1);
+  }
+
+  .terminal-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden;
+    box-shadow: 0 4px 6px -1px hsl(var(--background) / 0.5),
+                0 2px 4px -2px hsl(var(--background) / 0.5);
+  }
+
+  .code-text {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    @apply text-primary ml-1;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .line-number {
+    @apply text-muted-foreground select-none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  .section-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .tech-badge {
+    @apply px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground border border-border;
+    @apply hover:border-primary hover:bg-primary/10;
+  }
+
+  .tech-badge-primary {
+    @apply tech-badge border-primary/50 bg-primary/10 text-primary;
+  }
+
+  .social-link {
+    @apply p-3 rounded-full transition-all duration-300;
+    @apply bg-secondary text-muted-foreground border border-border;
+    @apply hover:text-primary hover:border-primary hover:glow-primary;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold mb-8 flex items-center gap-3;
+  }
+
+  .section-title::before {
+    content: '//';
+    @apply text-primary;
+  }
+}
